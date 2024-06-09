@@ -1,0 +1,37 @@
+import java.util.Random;
+import java.util.Scanner;
+
+public class FortuneTeller {
+    // Array of possible fortunes
+    private static final String[] FORTUNES = {
+        "You will have a great day!",
+        "A surprise is waiting for you.",
+        "You will meet someone special soon.",
+        "Be cautious of unexpected events.",
+        "Happiness is around the corner.",
+        "Your hard work will pay off.",
+        "You will face a challenge, but you will overcome it.",
+        "A new opportunity will present itself.",
+        "You will achieve your goals.",
+        "Good news is on its way."
+    };
+
+    // Method to get a random fortune
+    private static String getFortune() {
+        Random random = new Random();
+        int index = random.nextInt(FORTUNES.length);
+        return FORTUNES[index];
+    }
+
+    public static void main(String[] args) {
+        Scanner scanner = new Scanner(System.in);
+        System.out.println("Welcome to the Fortune Teller!");
+        System.out.println("Press Enter to receive your fortune...");
+        scanner.nextLine();  // Wait for the user to press Enter
+
+        String fortune = getFortune();
+        System.out.println("Your fortune: " + fortune);
+
+        scanner.close();
+    }
+}
